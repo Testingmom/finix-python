@@ -103,30 +103,11 @@ class CreateIdentityRequestEntity(ModelNormal):
         """
         lazy_import()
         return {
-            'annual_card_volume': (int,),  # noqa: E501
-            'business_address': (CreateIdentityRequestEntityBusinessAddress,),  # noqa: E501
-            'business_name': (str, none_type,),  # noqa: E501
-            'business_phone': (str,),  # noqa: E501
-            'business_tax_id': (str,),  # noqa: E501
-            'business_type': (str,),  # noqa: E501
-            'default_statement_descriptor': (str,),  # noqa: E501
-            'dob': (CreateIdentityRequestEntityDob,),  # noqa: E501
-            'doing_business_as': (str,),  # noqa: E501
             'email': (str,),  # noqa: E501
             'first_name': (str,),  # noqa: E501
-            'has_accepted_credit_cards_previously': (bool,),  # noqa: E501
-            'incorporation_date': (CreateIdentityRequestEntityIncorporationDate,),  # noqa: E501
             'last_name': (str,),  # noqa: E501
-            'max_transaction_amount': (int,),  # noqa: E501
-            'ach_max_transaction_amount': (int,),  # noqa: E501
-            'mcc': (str,),  # noqa: E501
-            'ownership_type': (str, none_type,),  # noqa: E501
             'personal_address': (CreateIdentityRequestEntityPersonalAddress,),  # noqa: E501
             'phone': (str,),  # noqa: E501
-            'principal_percentage_ownership': (int,),  # noqa: E501
-            'tax_id': (str,),  # noqa: E501
-            'title': (str,),  # noqa: E501
-            'url': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -135,30 +116,11 @@ class CreateIdentityRequestEntity(ModelNormal):
 
 
     attribute_map = {
-        'annual_card_volume': 'annual_card_volume',  # noqa: E501
-        'business_address': 'business_address',  # noqa: E501
-        'business_name': 'business_name',  # noqa: E501
-        'business_phone': 'business_phone',  # noqa: E501
-        'business_tax_id': 'business_tax_id',  # noqa: E501
-        'business_type': 'business_type',  # noqa: E501
-        'default_statement_descriptor': 'default_statement_descriptor',  # noqa: E501
-        'dob': 'dob',  # noqa: E501
-        'doing_business_as': 'doing_business_as',  # noqa: E501
         'email': 'email',  # noqa: E501
         'first_name': 'first_name',  # noqa: E501
-        'has_accepted_credit_cards_previously': 'has_accepted_credit_cards_previously',  # noqa: E501
-        'incorporation_date': 'incorporation_date',  # noqa: E501
         'last_name': 'last_name',  # noqa: E501
-        'max_transaction_amount': 'max_transaction_amount',  # noqa: E501
-        'ach_max_transaction_amount': 'ach_max_transaction_amount',  # noqa: E501
-        'mcc': 'mcc',  # noqa: E501
-        'ownership_type': 'ownership_type',  # noqa: E501
         'personal_address': 'personal_address',  # noqa: E501
         'phone': 'phone',  # noqa: E501
-        'principal_percentage_ownership': 'principal_percentage_ownership',  # noqa: E501
-        'tax_id': 'tax_id',  # noqa: E501
-        'title': 'title',  # noqa: E501
-        'url': 'url',  # noqa: E501
     }
 
     read_only_vars = {
@@ -168,7 +130,7 @@ class CreateIdentityRequestEntity(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, annual_card_volume, business_address, business_name, business_phone, business_tax_id, business_type, default_statement_descriptor, dob, doing_business_as, email, first_name, has_accepted_credit_cards_previously, incorporation_date, last_name, max_transaction_amount, ach_max_transaction_amount, mcc, ownership_type, personal_address, phone, principal_percentage_ownership, tax_id, title, url, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, email, first_name, last_name, personal_address, phone, *args, **kwargs):  # noqa: E501
         """CreateIdentityRequestEntity - a model defined in OpenAPI
 
         Args:
@@ -255,30 +217,12 @@ class CreateIdentityRequestEntity(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.annual_card_volume = annual_card_volume
-        self.business_address = business_address
-        self.business_name = business_name
-        self.business_phone = business_phone
-        self.business_tax_id = business_tax_id
-        self.business_type = business_type
-        self.default_statement_descriptor = default_statement_descriptor
-        self.dob = dob
-        self.doing_business_as = doing_business_as
         self.email = email
         self.first_name = first_name
-        self.has_accepted_credit_cards_previously = has_accepted_credit_cards_previously
-        self.incorporation_date = incorporation_date
         self.last_name = last_name
-        self.max_transaction_amount = max_transaction_amount
-        self.ach_max_transaction_amount = ach_max_transaction_amount
-        self.mcc = mcc
-        self.ownership_type = ownership_type
         self.personal_address = personal_address
         self.phone = phone
-        self.principal_percentage_ownership = principal_percentage_ownership
-        self.tax_id = tax_id
-        self.title = title
-        self.url = url
+
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -299,7 +243,7 @@ class CreateIdentityRequestEntity(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, annual_card_volume, business_address, business_name, business_phone, business_tax_id, business_type, default_statement_descriptor, dob, doing_business_as, email, first_name, has_accepted_credit_cards_previously, incorporation_date, last_name, max_transaction_amount, ach_max_transaction_amount, mcc, ownership_type, personal_address, phone, principal_percentage_ownership, tax_id, title, url, *args, **kwargs):  # noqa: E501
+    def __init__(self, email, first_name, last_name,  personal_address, phone, *args, **kwargs):  # noqa: E501
         """CreateIdentityRequestEntity - a model defined in OpenAPI
 
         Args:
@@ -384,30 +328,11 @@ class CreateIdentityRequestEntity(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.annual_card_volume = annual_card_volume
-        self.business_address = business_address
-        self.business_name = business_name
-        self.business_phone = business_phone
-        self.business_tax_id = business_tax_id
-        self.business_type = business_type
-        self.default_statement_descriptor = default_statement_descriptor
-        self.dob = dob
-        self.doing_business_as = doing_business_as
         self.email = email
         self.first_name = first_name
-        self.has_accepted_credit_cards_previously = has_accepted_credit_cards_previously
-        self.incorporation_date = incorporation_date
         self.last_name = last_name
-        self.max_transaction_amount = max_transaction_amount
-        self.ach_max_transaction_amount = ach_max_transaction_amount
-        self.mcc = mcc
-        self.ownership_type = ownership_type
         self.personal_address = personal_address
         self.phone = phone
-        self.principal_percentage_ownership = principal_percentage_ownership
-        self.tax_id = tax_id
-        self.title = title
-        self.url = url
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

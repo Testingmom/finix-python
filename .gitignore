@@ -67,3 +67,4 @@ target/
 
 #mac
 .DS_store
+.idea
