@@ -106,7 +106,6 @@ class CreateIdentityRequestEntity(ModelNormal):
             'email': (str,),  # noqa: E501
             'first_name': (str,),  # noqa: E501
             'last_name': (str,),  # noqa: E501
-            'personal_address': (CreateIdentityRequestEntityPersonalAddress,),  # noqa: E501
             'phone': (str,),  # noqa: E501
         }
 
@@ -130,7 +129,7 @@ class CreateIdentityRequestEntity(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, email, first_name, last_name, personal_address, phone, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, email, first_name, last_name, phone, *args, **kwargs):  # noqa: E501
         """CreateIdentityRequestEntity - a model defined in OpenAPI
 
         Args:
@@ -220,7 +219,6 @@ class CreateIdentityRequestEntity(ModelNormal):
         self.email = email
         self.first_name = first_name
         self.last_name = last_name
-        self.personal_address = personal_address
         self.phone = phone
 
         for var_name, var_value in kwargs.items():
@@ -243,7 +241,7 @@ class CreateIdentityRequestEntity(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, email, first_name, last_name,  personal_address, phone, *args, **kwargs):  # noqa: E501
+    def __init__(self, email, first_name, last_name, phone, *args, **kwargs):  # noqa: E501
         """CreateIdentityRequestEntity - a model defined in OpenAPI
 
         Args:
@@ -331,7 +329,6 @@ class CreateIdentityRequestEntity(ModelNormal):
         self.email = email
         self.first_name = first_name
         self.last_name = last_name
-        self.personal_address = personal_address
         self.phone = phone
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
