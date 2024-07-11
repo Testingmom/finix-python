@@ -106,6 +106,7 @@ class CreateIdentityRequestEntity(ModelNormal):
             'email': (str,),  # noqa: E501
             'first_name': (str,),  # noqa: E501
             'last_name': (str,),  # noqa: E501
+            'personal_address': (CreateIdentityRequestEntityPersonalAddress,),  # noqa: E501
             'phone': (str,),  # noqa: E501
         }
 
@@ -118,6 +119,7 @@ class CreateIdentityRequestEntity(ModelNormal):
         'email': 'email',  # noqa: E501
         'first_name': 'first_name',  # noqa: E501
         'last_name': 'last_name',  # noqa: E501
+        'personal_address': 'personal_address',  # noqa: E501
         'phone': 'phone',  # noqa: E501
     }
 
@@ -128,7 +130,7 @@ class CreateIdentityRequestEntity(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, email, first_name, last_name, phone, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, email, first_name, last_name, personal_address, phone, *args, **kwargs):  # noqa: E501
         """CreateIdentityRequestEntity - a model defined in OpenAPI
 
         Args:
@@ -218,6 +220,7 @@ class CreateIdentityRequestEntity(ModelNormal):
         self.email = email
         self.first_name = first_name
         self.last_name = last_name
+        self.personal_address = personal_address
         self.phone = phone
 
         for var_name, var_value in kwargs.items():
@@ -240,7 +243,7 @@ class CreateIdentityRequestEntity(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, email, first_name, last_name, phone, *args, **kwargs):  # noqa: E501
+    def __init__(self, email, first_name, last_name,  personal_address, phone, *args, **kwargs):  # noqa: E501
         """CreateIdentityRequestEntity - a model defined in OpenAPI
 
         Args:
@@ -262,6 +265,7 @@ class CreateIdentityRequestEntity(ModelNormal):
             ach_max_transaction_amount (int): The maximum amount (in cents) that can be charged for a single ACH transaction (max 12 characters).
             mcc (str): The Merchant Category Code ([MCC](http://www.dm.usda.gov/procurement/card/card\\_x/mcc.pdf)) that this merchant will be classified under. For a list of approved MCCs, see [Approved Merchant Category Codes.](/docs/guides/business/security-and-compliance/approved-merchants/)
             ownership_type (str, none_type): Avalible values include: <ul><li><strong>PUBLIC</strong> to indicate a publicly-traded company.<li><strong>PRIVATE</strong> for privately-held businesses.  For `business_type` of **GOVERNMENT_AGENCY** and **TAX_EXEMPT_ORGANIZATION** the `ownership_type` should be set to **PUBLIC**.  For `business_type` **INDIVIDUAL_SOLE_PROPRIETORSHIP**, the `ownership_type` should be set to **PRIVATE**.
+            personal_address (CreateIdentityRequestEntityPersonalAddress):
             phone (str): Phone number where the buyer can be reached.
             principal_percentage_ownership (int): Percentage of the company owned by the principal control owner (min 0; max 100).
             tax_id (str): Pass one of the following values (nine digits):<ul><li>Social Security Number (SSN)<li>Tax Identification Number (TIN)<li>Individual Taxpayer Identification Number (ITIN)</ul>
@@ -327,6 +331,7 @@ class CreateIdentityRequestEntity(ModelNormal):
         self.email = email
         self.first_name = first_name
         self.last_name = last_name
+        self.personal_address = personal_address
         self.phone = phone
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

@@ -199,7 +199,7 @@ class CreateIdentityRequestEntityPersonalAddress(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, city, country, line1, postal_code, region, *args, **kwargs):  # noqa: E501
         """CreateIdentityRequestEntityPersonalAddress - a model defined in OpenAPI
 
         Args:
@@ -266,6 +266,11 @@ class CreateIdentityRequestEntityPersonalAddress(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.city = city
+        self.country = country
+        self.line1 = line1
+        self.postal_code = postal_code
+        self.region = region
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
