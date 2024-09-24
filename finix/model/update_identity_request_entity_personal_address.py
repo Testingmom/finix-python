@@ -53,24 +53,6 @@ class UpdateIdentityRequestEntityPersonalAddress(ModelNormal):
     }
 
     validations = {
-        ('city',): {
-            'min_length': 1,
-        },
-        ('country',): {
-            'min_length': 1,
-        },
-        ('region',): {
-            'min_length': 1,
-        },
-        ('line2',): {
-            'min_length': 1,
-        },
-        ('line1',): {
-            'min_length': 1,
-        },
-        ('postal_code',): {
-            'min_length': 1,
-        },
     }
 
     @cached_property
